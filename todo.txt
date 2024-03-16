@@ -1,0 +1,15 @@
+coding tasks
+
+level start:
+-play story dialogue/animations/audio
+
+game loop:
+-select unit
+-unit deployment controls
+-apply forces to unit
+-watch physics simulation
+-check for win/loss conditions
+
+ui:
+-main menu
+-level selection menu
