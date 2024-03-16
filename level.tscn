@@ -1,14 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://deev8dkuei7c6"]
+[gd_scene load_steps=9 format=3 uid="uid://deev8dkuei7c6"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0l57v"]
-bounce = 0.7
+[ext_resource type="Script" path="res://Cannon.gd" id="1_ka8xj"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_5lxua"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_4n3ev"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e1nwk"]
-albedo_color = Color(0.4, 0.392157, 0.627451, 1)
+[sub_resource type="BoxMesh" id="BoxMesh_ecp7n"]
+size = Vector3(4, 1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e3avj"]
 size = Vector3(50, 1, 10)
@@ -27,22 +22,25 @@ albedo_color = Color(1, 0.34902, 1, 1)
 
 [node name="Level" type="Node3D"]
 
+[node name="Cannon" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.7996, 2.06074, 0)
+script = ExtResource("1_ka8xj")
+
+[node name="PivotPoint" type="Node3D" parent="Cannon"]
+
+[node name="Barrel" type="MeshInstance3D" parent="Cannon/PivotPoint"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
+mesh = SubResource("BoxMesh_ecp7n")
+skeleton = NodePath("../..")
+
+[node name="ShootFromPoint" type="Node3D" parent="Cannon/PivotPoint/Barrel"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
+
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 4, 10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 80)
 current = true
-
-[node name="Unit" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.36199, 3.41152, 0)
-axis_lock_linear_z = true
-physics_material_override = SubResource("PhysicsMaterial_0l57v")
-linear_velocity = Vector3(20, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Unit"]
-shape = SubResource("SphereShape3D_5lxua")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Unit"]
-mesh = SubResource("SphereMesh_4n3ev")
-surface_material_override/0 = SubResource("StandardMaterial3D_e1nwk")
+fov = 10.0
+size = 0.3
 
 [node name="Floor" type="StaticBody3D" parent="."]
 
