@@ -1,5 +1,9 @@
 coding tasks
 
+ui:
+-main menu
+-level selection menu
+
 level start:
 -play story dialogue/animations/audio
 
@@ -10,6 +14,5 @@ game loop:
 -watch physics simulation
 -check for win/loss conditions
 
-ui:
--main menu
--level selection menu
+particle effects:
+-particle effects
