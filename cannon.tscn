@@ -12,11 +12,12 @@ script = ExtResource("1_tmwwc")
 [node name="cannon base mesh2" parent="." instance=ExtResource("2_vdosp")]
 
 [node name="PivotPoint" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="cannon barrel mesh" parent="PivotPoint" instance=ExtResource("3_qicgc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 
 [node name="ShootFromPoint" type="Node3D" parent="PivotPoint/cannon barrel mesh"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.86457, 0.274, 2.30577)
 
 [node name="Audio" type="Node" parent="."]
 

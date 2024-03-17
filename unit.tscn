@@ -1,18 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://cbpxvaall2xca"]
+[gd_scene load_steps=8 format=3 uid="uid://cbpxvaall2xca"]
 
 [ext_resource type="Script" path="res://unit.gd" id="1_4jot5"]
 [ext_resource type="AudioStream" uid="uid://cjuh5l7lc3y85" path="res://audio/thud.mp3" id="2_bjvyp"]
 [ext_resource type="AudioStream" uid="uid://va0i3yg6yjvm" path="res://audio/explosion.mp3" id="3_55vui"]
+[ext_resource type="PackedScene" uid="uid://dxolphl5ld6rn" path="res://suicide bomber.glb" id="4_67k4l"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0l57v"]
 bounce = 0.7
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_5lxua"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_4n3ev"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e1nwk"]
-albedo_color = Color(0.4, 0.392157, 0.627451, 1)
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_amyhp"]
+radius = 0.2
+height = 1.8
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_mlhgq"]
 radius = 3.0
@@ -25,11 +23,7 @@ contact_monitor = true
 script = ExtResource("1_4jot5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_5lxua")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("SphereMesh_4n3ev")
-surface_material_override/0 = SubResource("StandardMaterial3D_e1nwk")
+shape = SubResource("CapsuleShape3D_amyhp")
 
 [node name="ThudAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_bjvyp")
@@ -41,5 +35,8 @@ stream = ExtResource("3_55vui")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BlastArea"]
 shape = SubResource("SphereShape3D_mlhgq")
+
+[node name="suicide bomber" parent="." instance=ExtResource("4_67k4l")]
+transform = Transform3D(-0.35, 0, -5.28485e-08, 0, 0.35, 0, 5.28485e-08, 0, -0.35, 0, 0.241101, 0)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
