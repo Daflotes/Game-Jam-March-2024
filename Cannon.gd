@@ -10,6 +10,10 @@ var cannon_angle = 0
 @export var cannon_power = 20 #magnitude of unit velocity
 
 func _physics_process(delta):
+	
+	if Input.is_action_just_pressed("esc"):
+		get_tree().quit()
+	
 	if Input.is_action_pressed("ui_up"):
 		pivot_point.rotation.z += angle_change_per_second*delta
 	if Input.is_action_pressed("ui_down"):
@@ -21,3 +25,4 @@ func _physics_process(delta):
 		var shoot_vector = Vector3(1,0,0).rotated(Vector3(0,0,1), pivot_point.rotation.z)
 		unit_instance.linear_velocity = shoot_vector*cannon_power
 		root_scene.add_child(unit_instance)
+
