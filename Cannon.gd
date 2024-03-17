@@ -7,9 +7,10 @@ extends Node3D
 
 var unit_scene = preload("res://unit.tscn")
 var cannon_angle = 0
+var ready_to_fire = true
 
 @export var angle_change_per_second = 1
-@export var cannon_power = 20 #magnitude of unit velocity
+@export var cannon_power = 10 #magnitude of unit velocity
 
 func _physics_process(delta):
 	
@@ -26,9 +27,13 @@ func _physics_process(delta):
 		cannon_angle_adjust_audio.stop()
 		
 	if Input.is_action_just_pressed("ui_accept"):
-		var unit_instance = unit_scene.instantiate()
-		unit_instance.position = shoot_from_point.global_position
-		var shoot_vector = Vector3(1,0,0).rotated(Vector3(0,0,1), pivot_point.rotation.z)
-		unit_instance.linear_velocity = shoot_vector*cannon_power
-		root_scene.add_child(unit_instance)
-		cannon_fire_audio.play()
+		if ready_to_fire:
+			var unit_instance = unit_scene.instantiate()
+			unit_instance.position = shoot_from_point.global_position
+			var shoot_vector = Vector3(1,0,0).rotated(Vector3(0,0,1), pivot_point.rotation.z)
+			unit_instance.linear_velocity = shoot_vector*cannon_power
+			root_scene.add_child(unit_instance)
+			cannon_fire_audio.play()
+			ready_to_fire = false
+		else:
+			ready_to_fire = true

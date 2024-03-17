@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://deev8dkuei7c6"]
+[gd_scene load_steps=16 format=3 uid="uid://deev8dkuei7c6"]
 
 [ext_resource type="Script" path="res://Cannon.gd" id="1_ka8xj"]
 [ext_resource type="AudioStream" uid="uid://cxutoycf7veao" path="res://audio/cannon_angle_adjust.mp3" id="2_itbnt"]
@@ -24,11 +24,16 @@ albedo_color = Color(1, 0.34902, 1, 1)
 background_color = Color(0, 0.196078, 0.627451, 0.815686)
 ambient_light_color = Color(0.929412, 0.929412, 0.929412, 1)
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_a7y5k"]
+bounce = 0.1
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_b1u4u"]
 resource_local_to_scene = true
+size = Vector3(0.2, 1, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_2ik8k"]
 resource_local_to_scene = true
+size = Vector3(0.2, 1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_icwu4"]
 resource_local_to_scene = true
@@ -89,6 +94,7 @@ environment = SubResource("Environment_nos7q")
 [node name="Wall" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 0)
 axis_lock_linear_z = true
+physics_material_override = SubResource("PhysicsMaterial_a7y5k")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall"]
 shape = SubResource("BoxShape3D_b1u4u")
