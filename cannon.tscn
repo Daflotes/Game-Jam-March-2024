@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://c28fgs3xt0cvm"]
+
+[ext_resource type="Script" path="res://Cannon.gd" id="1_tmwwc"]
+[ext_resource type="PackedScene" uid="uid://dsiyyetdd2q40" path="res://cannon base mesh2.glb" id="2_vdosp"]
+[ext_resource type="PackedScene" uid="uid://bi6pcqu4p8xa3" path="res://cannon barrel mesh.glb" id="3_qicgc"]
+[ext_resource type="AudioStream" uid="uid://cxutoycf7veao" path="res://audio/cannon_angle_adjust.mp3" id="4_whl5w"]
+[ext_resource type="AudioStream" uid="uid://cmkab83sanuko" path="res://audio/cannon_fire.mp3" id="5_c20pt"]
+
+[node name="Cannon" type="Node3D"]
+script = ExtResource("1_tmwwc")
+
+[node name="cannon base mesh2" parent="." instance=ExtResource("2_vdosp")]
+
+[node name="PivotPoint" type="Node3D" parent="."]
+
+[node name="cannon barrel mesh" parent="PivotPoint" instance=ExtResource("3_qicgc")]
+
+[node name="ShootFromPoint" type="Node3D" parent="PivotPoint/cannon barrel mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.86457, 0.274, 2.30577)
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="CannonAngleAdjustAudio" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("4_whl5w")
+
+[node name="CannonFireAudio" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("5_c20pt")
+volume_db = -10.0
