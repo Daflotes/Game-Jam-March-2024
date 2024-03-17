@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://cbpxvaall2xca"]
+[gd_scene load_steps=6 format=3 uid="uid://cbpxvaall2xca"]
 
 [ext_resource type="Script" path="res://unit.gd" id="1_4jot5"]
-[ext_resource type="AudioStream" uid="uid://cjuh5l7lc3y85" path="res://audio/thud.mp3" id="2_bjvyp"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0l57v"]
 bounce = 0.7
@@ -16,8 +15,6 @@ albedo_color = Color(0.4, 0.392157, 0.627451, 1)
 [node name="Unit" type="RigidBody3D"]
 axis_lock_linear_z = true
 physics_material_override = SubResource("PhysicsMaterial_0l57v")
-max_contacts_reported = 10
-contact_monitor = true
 script = ExtResource("1_4jot5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -27,8 +24,4 @@ shape = SubResource("SphereShape3D_5lxua")
 mesh = SubResource("SphereMesh_4n3ev")
 surface_material_override/0 = SubResource("StandardMaterial3D_e1nwk")
 
-[node name="ThudAudio" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_bjvyp")
-volume_db = 5.0
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[node name="Area3D" type="Area3D" parent="."]

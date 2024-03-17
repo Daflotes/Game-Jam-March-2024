@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://deev8dkuei7c6"]
+[gd_scene load_steps=14 format=3 uid="uid://deev8dkuei7c6"]
 
 [ext_resource type="Script" path="res://Cannon.gd" id="1_ka8xj"]
 [ext_resource type="AudioStream" uid="uid://cxutoycf7veao" path="res://audio/cannon_angle_adjust.mp3" id="2_itbnt"]
@@ -7,9 +7,6 @@
 
 [sub_resource type="BoxMesh" id="BoxMesh_ecp7n"]
 size = Vector3(4, 1, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t5dwb"]
-albedo_color = Color(0.313726, 0.341176, 0.556863, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e3avj"]
 size = Vector3(50, 1, 10)
@@ -21,7 +18,6 @@ size = Vector3(50, 1, 10)
 albedo_color = Color(1, 0.34902, 1, 1)
 
 [sub_resource type="Environment" id="Environment_nos7q"]
-background_color = Color(0, 0.196078, 0.627451, 0.815686)
 ambient_light_color = Color(0.929412, 0.929412, 0.929412, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b1u4u"]
@@ -32,11 +28,11 @@ resource_local_to_scene = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_icwu4"]
 resource_local_to_scene = true
-size = Vector3(10, 1, 1)
+size = Vector3(20, 1, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_jdgq4"]
 resource_local_to_scene = true
-size = Vector3(10, 1, 1)
+size = Vector3(20, 1, 1)
 
 [node name="Level" type="Node3D"]
 
@@ -50,7 +46,6 @@ script = ExtResource("1_ka8xj")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
 mesh = SubResource("BoxMesh_ecp7n")
 skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_t5dwb")
 
 [node name="ShootFromPoint" type="Node3D" parent="Cannon/PivotPoint/Barrel"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
@@ -62,10 +57,8 @@ stream = ExtResource("2_itbnt")
 
 [node name="CannonFireAudio" type="AudioStreamPlayer" parent="Cannon/Audio"]
 stream = ExtResource("3_e4dc2")
-volume_db = -10.0
 
 [node name="CameraBase" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 0, 0)
 script = ExtResource("4_crgfx")
 
 [node name="Camera3D" type="Camera3D" parent="CameraBase"]
@@ -99,9 +92,6 @@ mesh = SubResource("BoxMesh_2ik8k")
 [node name="Wall6" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3707, 1, 0)
 axis_lock_linear_z = true
-axis_lock_angular_x = true
-axis_lock_angular_y = true
-axis_lock_angular_z = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall6"]
 shape = SubResource("BoxShape3D_icwu4")
@@ -148,6 +138,3 @@ shape = SubResource("BoxShape3D_b1u4u")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall5"]
 mesh = SubResource("BoxMesh_2ik8k")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30, 0)
