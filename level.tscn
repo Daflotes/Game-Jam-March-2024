@@ -1,15 +1,11 @@
 [gd_scene load_steps=16 format=3 uid="uid://deev8dkuei7c6"]
 
 [ext_resource type="Script" path="res://Cannon.gd" id="1_ka8xj"]
+[ext_resource type="PackedScene" uid="uid://dsiyyetdd2q40" path="res://cannon base mesh2.glb" id="2_cp3xy"]
 [ext_resource type="AudioStream" uid="uid://cxutoycf7veao" path="res://audio/cannon_angle_adjust.mp3" id="2_itbnt"]
 [ext_resource type="AudioStream" uid="uid://cmkab83sanuko" path="res://audio/cannon_fire.mp3" id="3_e4dc2"]
+[ext_resource type="PackedScene" uid="uid://bi6pcqu4p8xa3" path="res://cannon barrel mesh.glb" id="3_j4yi1"]
 [ext_resource type="Script" path="res://CameraBase.gd" id="4_crgfx"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_ecp7n"]
-size = Vector3(4, 1, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t5dwb"]
-albedo_color = Color(0.313726, 0.341176, 0.556863, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e3avj"]
 size = Vector3(50, 1, 10)
@@ -46,19 +42,19 @@ size = Vector3(10, 1, 1)
 [node name="Level" type="Node3D"]
 
 [node name="Cannon" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.7996, 2.06074, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -11, 2, 1.4)
 script = ExtResource("1_ka8xj")
+
+[node name="cannon base mesh2" parent="Cannon" instance=ExtResource("2_cp3xy")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 2.2)
 
 [node name="PivotPoint" type="Node3D" parent="Cannon"]
 
-[node name="Barrel" type="MeshInstance3D" parent="Cannon/PivotPoint"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
-mesh = SubResource("BoxMesh_ecp7n")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_t5dwb")
+[node name="cannon barrel mesh" parent="Cannon/PivotPoint" instance=ExtResource("3_j4yi1")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 
-[node name="ShootFromPoint" type="Node3D" parent="Cannon/PivotPoint/Barrel"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
+[node name="ShootFromPoint" type="Node3D" parent="Cannon/PivotPoint/cannon barrel mesh"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.671093, 0.273901, 2.13329)
 
 [node name="Audio" type="Node" parent="Cannon"]
 
@@ -74,7 +70,7 @@ transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 
 script = ExtResource("4_crgfx")
 
 [node name="Camera3D" type="Camera3D" parent="CameraBase"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 80)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 100)
 current = true
 fov = 10.0
 size = 0.3

@@ -19,4 +19,4 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("camera_reset"):
 		rotation.x = deg_to_rad(-15)
 		rotation.y = 0
-		camera3D.position.z = 80
+		camera3D.position.z = 100

@@ -1,7 +1,7 @@
 extends Node3D
 @onready var root_scene = get_tree().get_root()
 @onready var pivot_point = get_node("PivotPoint")
-@onready var shoot_from_point = get_node("PivotPoint/Barrel/ShootFromPoint")
+@onready var shoot_from_point = get_node("PivotPoint/cannon barrel mesh/ShootFromPoint")
 @onready var cannon_angle_adjust_audio = get_node("Audio/CannonAngleAdjustAudio")
 @onready var cannon_fire_audio = get_node("Audio/CannonFireAudio")
 

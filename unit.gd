@@ -25,6 +25,7 @@ func explode():
 		if b.has_method("apply_impulse"):
 			var impulse_direction = (b.position - position).normalized()
 			var impulse_power = max_explosion_impulse/(b.position-position).length()
+			impulse_power = min(impulse_power, max_explosion_impulse)
 			if impulse_direction == Vector3(0,0,0):
 				impulse_direction = Vector3(0,1,0)
 				impulse_power = max_explosion_impulse
