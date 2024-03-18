@@ -1,15 +1,34 @@
-[gd_scene load_steps=3 format=3 uid="uid://cptp2aeh7v44y"]
+[gd_scene load_steps=6 format=3 uid="uid://cptp2aeh7v44y"]
+
+[ext_resource type="Script" path="res://kamikaze.gd" id="1_3vqyy"]
+[ext_resource type="AudioStream" uid="uid://va0i3yg6yjvm" path="res://audio/explosion.mp3" id="2_odl0f"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fnomt"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_bghsk"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_1i4cq"]
+radius = 3.0
+
 [node name="Kamikaze" type="RigidBody3D"]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -15.7968, 11.8297, 0)
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 gravity_scale = 0.0
+max_contacts_reported = 10
+contact_monitor = true
+script = ExtResource("1_3vqyy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_fnomt")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_bghsk")
+
+[node name="BlastArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BlastArea"]
+shape = SubResource("SphereShape3D_1i4cq")
+
+[node name="ExplosionAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_odl0f")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

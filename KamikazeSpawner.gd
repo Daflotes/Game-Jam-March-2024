@@ -54,7 +54,10 @@ func _physics_process(_delta):
 		var kamikaze_instance = kamikaze_scene.instantiate()
 		
 		kamikaze_instance.linear_velocity = (pointB - pointA).normalized()*20
+		#kamikaze_instance.rotation.z = kamikaze_instance.linear_velocity.angle_to(Vector3(1,0,0)) + deg_to_rad(90)
 		kamikaze_instance.position = pointA - kamikaze_instance.linear_velocity
+		kamikaze_instance.look_at_from_position(pointA, pointB)
+		kamikaze_instance.rotation.x += deg_to_rad(90)
 		get_tree().get_root().add_child(kamikaze_instance)
 		
 		
