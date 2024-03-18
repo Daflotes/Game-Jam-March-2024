@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b1a5dqmjyaql1"
-path.s3tc="res://.godot/imported/cannon barrel mesh_barreltexture-diffuse.jpg-3c0fbd13ca766977978e0b2a460f29be.s3tc.ctex"
+path.s3tc="res://.godot/imported/cannon barrel mesh_barreltexture-diffuse.jpg-ebb6a355d865978e9e763e6c106b2ece.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://cannon barrel mesh_barreltexture-diffuse.jpg"
-dest_files=["res://.godot/imported/cannon barrel mesh_barreltexture-diffuse.jpg-3c0fbd13ca766977978e0b2a460f29be.s3tc.ctex"]
+source_file="res://Art Assets/cannon barrel mesh_barreltexture-diffuse.jpg"
+dest_files=["res://.godot/imported/cannon barrel mesh_barreltexture-diffuse.jpg-ebb6a355d865978e9e763e6c106b2ece.s3tc.ctex"]
 
 [params]
 

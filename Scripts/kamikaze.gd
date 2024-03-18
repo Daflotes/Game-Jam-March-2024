@@ -21,7 +21,7 @@ func explode():
 			var impulse_vector = impulse_direction*impulse_power
 			b.apply_impulse(impulse_vector, position)
 
-func _on_body_entered(body):
+func _on_body_entered(_body):
 	if can_explode:
 		gravity_scale = 1
 		explode()

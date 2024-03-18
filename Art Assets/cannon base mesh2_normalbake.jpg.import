@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://coevvbvx05bvv"
-path.s3tc="res://.godot/imported/cannon base mesh2_normalbake.jpg-7d4b86c2a31eddf07c520e7427d47263.s3tc.ctex"
+path.s3tc="res://.godot/imported/cannon base mesh2_normalbake.jpg-b36ce73356d42e3abd53779579e8dea2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://cannon base mesh2_normalbake.jpg"
-dest_files=["res://.godot/imported/cannon base mesh2_normalbake.jpg-7d4b86c2a31eddf07c520e7427d47263.s3tc.ctex"]
+source_file="res://Art Assets/cannon base mesh2_normalbake.jpg"
+dest_files=["res://.godot/imported/cannon base mesh2_normalbake.jpg-b36ce73356d42e3abd53779579e8dea2.s3tc.ctex"]
 
 [params]
 

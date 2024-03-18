@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cptp2aeh7v44y"]
 
-[ext_resource type="Script" path="res://kamikaze.gd" id="1_3vqyy"]
-[ext_resource type="AudioStream" uid="uid://va0i3yg6yjvm" path="res://audio/explosion.mp3" id="2_odl0f"]
+[ext_resource type="Script" path="res://Scripts/kamikaze.gd" id="1_3uo21"]
+[ext_resource type="AudioStream" uid="uid://va0i3yg6yjvm" path="res://audio/explosion.mp3" id="2_1fcfl"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fnomt"]
 
@@ -15,7 +15,7 @@ transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 
 gravity_scale = 0.0
 max_contacts_reported = 10
 contact_monitor = true
-script = ExtResource("1_3vqyy")
+script = ExtResource("1_3uo21")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_fnomt")
@@ -29,6 +29,6 @@ mesh = SubResource("CapsuleMesh_bghsk")
 shape = SubResource("SphereShape3D_1i4cq")
 
 [node name="ExplosionAudio" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_odl0f")
+stream = ExtResource("2_1fcfl")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

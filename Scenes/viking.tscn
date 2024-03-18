@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwcerhiurfvo1"]
+
+[ext_resource type="Script" path="res://Scripts/Viking.gd" id="1_f0mwi"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p0fub"]
+friction = 0.0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lnjsx"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_b2rkj"]
+
+[node name="Viking" type="RigidBody3D"]
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+physics_material_override = SubResource("PhysicsMaterial_p0fub")
+script = ExtResource("1_f0mwi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_lnjsx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_b2rkj")
+
+[node name="FloorChecker" type="RayCast3D" parent="."]
+target_position = Vector3(0, -1.1, 0)

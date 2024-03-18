@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dxolphl5ld6rn"
-path="res://.godot/imported/suicide bomber.glb-8c1134df23901cacc7d3f1c503330651.scn"
+path="res://.godot/imported/suicide bomber.glb-f01a738c8a81964090f686983267e2a4.scn"
 
 [deps]
 
-source_file="res://suicide bomber.glb"
-dest_files=["res://.godot/imported/suicide bomber.glb-8c1134df23901cacc7d3f1c503330651.scn"]
+source_file="res://Art Assets/suicide bomber.glb"
+dest_files=["res://.godot/imported/suicide bomber.glb-f01a738c8a81964090f686983267e2a4.scn"]
 
 [params]
 

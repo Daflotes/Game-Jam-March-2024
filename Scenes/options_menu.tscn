@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dpd2cw2erwgam"]
 
-[ext_resource type="Script" path="res://options_menu.gd" id="1_q4hbg"]
+[ext_resource type="Script" path="res://Scripts/options_menu.gd" id="1_tlf7q"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -21,7 +21,7 @@ layout_mode = 2
 [node name="Volume" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Volume"
-script = ExtResource("1_q4hbg")
+script = ExtResource("1_tlf7q")
 
 [node name="Placeholder Option" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2

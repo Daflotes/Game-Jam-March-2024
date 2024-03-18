@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dil6eovfkfl8a"
-path="res://.godot/imported/ground mesh.glb-6e1f1006150d205e2e3f1b5962e7c1ea.scn"
+path="res://.godot/imported/ground mesh.glb-8263283aea7e571227ef3a1ed3855820.scn"
 
 [deps]
 
-source_file="res://ground mesh.glb"
-dest_files=["res://.godot/imported/ground mesh.glb-6e1f1006150d205e2e3f1b5962e7c1ea.scn"]
+source_file="res://Art Assets/ground mesh.glb"
+dest_files=["res://.godot/imported/ground mesh.glb-8263283aea7e571227ef3a1ed3855820.scn"]
 
 [params]
 

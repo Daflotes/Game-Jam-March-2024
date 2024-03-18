@@ -4,7 +4,7 @@ extends Node3D
 @onready var cannon_angle_adjust_audio = get_node("Audio/CannonAngleAdjustAudio")
 @onready var cannon_fire_audio = get_node("Audio/CannonFireAudio")
 
-var unit_scene = preload("res://unit.tscn")
+var unit_scene = preload("res://Scenes/unit.tscn")
 var cannon_angle = 0
 var ready_to_fire = true
 

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dsiyyetdd2q40"
-path="res://.godot/imported/cannon base mesh2.glb-924e3b18f8b3d02fe6b0cad672384d76.scn"
+path="res://.godot/imported/cannon base mesh2.glb-151a9c08ceaa4505511273991280e553.scn"
 
 [deps]
 
-source_file="res://cannon base mesh2.glb"
-dest_files=["res://.godot/imported/cannon base mesh2.glb-924e3b18f8b3d02fe6b0cad672384d76.scn"]
+source_file="res://Art Assets/cannon base mesh2.glb"
+dest_files=["res://.godot/imported/cannon base mesh2.glb-151a9c08ceaa4505511273991280e553.scn"]
 
 [params]
 

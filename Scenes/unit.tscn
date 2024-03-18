@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://cbpxvaall2xca"]
 
-[ext_resource type="Script" path="res://unit.gd" id="1_4jot5"]
-[ext_resource type="AudioStream" uid="uid://cjuh5l7lc3y85" path="res://audio/thud.mp3" id="2_bjvyp"]
-[ext_resource type="AudioStream" uid="uid://va0i3yg6yjvm" path="res://audio/explosion.mp3" id="3_55vui"]
-[ext_resource type="PackedScene" uid="uid://dxolphl5ld6rn" path="res://suicide bomber.glb" id="4_67k4l"]
+[ext_resource type="Script" path="res://Scripts/unit.gd" id="1_ecb5w"]
+[ext_resource type="AudioStream" uid="uid://cjuh5l7lc3y85" path="res://audio/thud.mp3" id="2_5h2bm"]
+[ext_resource type="AudioStream" uid="uid://va0i3yg6yjvm" path="res://audio/explosion.mp3" id="3_mkjxt"]
+[ext_resource type="PackedScene" uid="uid://dxolphl5ld6rn" path="res://Art Assets/suicide bomber.glb" id="4_dylm5"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0l57v"]
 bounce = 0.7
@@ -20,23 +20,23 @@ axis_lock_linear_z = true
 physics_material_override = SubResource("PhysicsMaterial_0l57v")
 max_contacts_reported = 10
 contact_monitor = true
-script = ExtResource("1_4jot5")
+script = ExtResource("1_ecb5w")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_amyhp")
 
 [node name="ThudAudio" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_bjvyp")
+stream = ExtResource("2_5h2bm")
 
 [node name="ExplosionAudio" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_55vui")
+stream = ExtResource("3_mkjxt")
 
 [node name="BlastArea" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BlastArea"]
 shape = SubResource("SphereShape3D_mlhgq")
 
-[node name="suicide bomber" parent="." instance=ExtResource("4_67k4l")]
+[node name="suicide bomber" parent="." instance=ExtResource("4_dylm5")]
 transform = Transform3D(-1.5299e-08, 0, 0.35, 0, 0.35, 0, -0.35, 0, -1.5299e-08, 0, 0.241, 0)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
