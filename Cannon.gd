@@ -1,5 +1,4 @@
 extends Node3D
-@onready var root_scene = get_tree().get_root()
 @onready var pivot_point = get_node("PivotPoint")
 @onready var shoot_from_point = get_node("PivotPoint/cannon barrel mesh/ShootFromPoint")
 @onready var cannon_angle_adjust_audio = get_node("Audio/CannonAngleAdjustAudio")
@@ -32,7 +31,8 @@ func _physics_process(delta):
 			unit_instance.position = shoot_from_point.global_position
 			var shoot_vector = Vector3(1,0,0).rotated(Vector3(0,0,1), pivot_point.rotation.z)
 			unit_instance.linear_velocity = shoot_vector*cannon_power
-			root_scene.add_child(unit_instance)
+			unit_instance.rotation.z = pivot_point.rotation.z + deg_to_rad(270)
+			get_tree().get_root().add_child(unit_instance)
 			cannon_fire_audio.play()
 			ready_to_fire = false
 		else:

@@ -15,7 +15,7 @@ height = 1.8
 [sub_resource type="SphereShape3D" id="SphereShape3D_mlhgq"]
 radius = 3.0
 
-[node name="Unit" type="RigidBody3D"]
+[node name="SuicideBomber" type="RigidBody3D"]
 axis_lock_linear_z = true
 physics_material_override = SubResource("PhysicsMaterial_0l57v")
 max_contacts_reported = 10
@@ -37,6 +37,6 @@ stream = ExtResource("3_55vui")
 shape = SubResource("SphereShape3D_mlhgq")
 
 [node name="suicide bomber" parent="." instance=ExtResource("4_67k4l")]
-transform = Transform3D(-0.35, 0, -5.28485e-08, 0, 0.35, 0, 5.28485e-08, 0, -0.35, 0, 0.241101, 0)
+transform = Transform3D(-1.5299e-08, 0, 0.35, 0, 0.35, 0, -0.35, 0, -1.5299e-08, 0, 0.241, 0)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

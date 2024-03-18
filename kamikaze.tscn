@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cptp2aeh7v44y"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fnomt"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_bghsk"]
+
+[node name="Kamikaze" type="RigidBody3D"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -15.7968, 11.8297, 0)
+gravity_scale = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_fnomt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_bghsk")

@@ -8,7 +8,7 @@ var timer = 0
 var explosion_time = 2
 var ready_to_explode = true
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	#explosion on timer
 	#timer += delta
 	#if timer >= explosion_time and ready_to_explode:
