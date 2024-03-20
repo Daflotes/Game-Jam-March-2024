@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Main Menu.gd" id="1_6q4cq"]
 [ext_resource type="Texture2D" uid="uid://dbluxe8dcnw1s" path="res://Art Assets/ground mesh_aerial_grass_rock_diff_2k-2.jpg" id="2_2fu70"]
-[ext_resource type="Script" path="res://Scenes/options_menu.gd" id="3_2b3bq"]
+[ext_resource type="PackedScene" uid="uid://rdkcany02kdh" path="res://Scenes/options_menu.tscn" id="3_22tsy"]
 
 [sub_resource type="SystemFont" id="SystemFont_320st"]
 font_names = PackedStringArray("Impact")
@@ -20,16 +20,11 @@ grow_vertical = 2
 script = ExtResource("1_6q4cq")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+layout_mode = 2
 offset_left = -448.0
-offset_top = -700.0
-offset_right = 448.0
-offset_bottom = 700.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_top = -534.0
+offset_right = 1600.0
+offset_bottom = 1514.0
 texture = ExtResource("2_2fu70")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -94,9 +89,6 @@ theme_override_fonts/font = SubResource("SystemFont_5rukt")
 theme_override_font_sizes/font_size = 24
 text = "Exit"
 
-[node name="OptionsMenu" type="Control" parent="."]
+[node name="Options_Menu" parent="." instance=ExtResource("3_22tsy")]
 visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("3_2b3bq")
+layout_mode = 1

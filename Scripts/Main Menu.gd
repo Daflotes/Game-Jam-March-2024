@@ -4,11 +4,9 @@ extends Control
 @onready var play_button = $"MarginContainer/HBoxContainer/VBoxContainer/Play Button" as Button
 @onready var options_button = $"MarginContainer/HBoxContainer/VBoxContainer/Options Button" as Button
 @onready var exit_button = $"MarginContainer/HBoxContainer/VBoxContainer/Exit Button" as Button
-@onready var options_menu = $OptionsMenu as OptionsMenu
-@onready var margin_container = $MarginContainer
-
+@onready var options_menu = $Options_Menu as OptionsMenu
+@onready var margin_container = $MarginContainer as MarginContainer
 @onready var start_level = preload("res://Scenes/level.tscn") as PackedScene
-
 
 func _ready():
 	handle_connecting_signals()
@@ -20,8 +18,7 @@ func on_options_pressed() -> void:
 	margin_container.visible = false
 	options_menu.set_process(true)
 	options_menu.visible = true
-	#print("fuck")
-
+	
 func on_exit_pressed() -> void:
 	get_tree().quit()
 	

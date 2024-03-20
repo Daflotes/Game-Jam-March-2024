@@ -1,8 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dpd2cw2erwgam"]
+[gd_scene load_steps=3 format=3 uid="uid://rdkcany02kdh"]
 
-[ext_resource type="Script" path="res://Scenes/options_menu.gd" id="1_ylfrl"]
+[ext_resource type="Script" path="res://Scripts/options_menu.gd" id="1_k3hoq"]
 
-[sub_resource type="SystemFont" id="SystemFont_sno1a"]
+[sub_resource type="SystemFont" id="SystemFont_ukfum"]
 font_names = PackedStringArray("Impact")
 
 [node name="Options_Menu" type="Control"]
@@ -12,7 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ylfrl")
+script = ExtResource("1_k3hoq")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -21,20 +21,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 12
-theme_override_constants/margin_top = 12
-theme_override_constants/margin_right = 12
-theme_override_constants/margin_bottom = 12
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = -48
 
-[node name="Options Label" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 12
-theme_override_fonts/font = SubResource("SystemFont_sno1a")
+theme_override_fonts/font = SubResource("SystemFont_ukfum")
 theme_override_font_sizes/font_size = 32
 text = "Options"
 horizontal_alignment = 1
