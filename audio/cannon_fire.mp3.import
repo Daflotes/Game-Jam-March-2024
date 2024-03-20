@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://cmkab83sanuko"
-path="res://.godot/imported/cannon_fire.mp3-6f8e1c228205fccf45fafcf59f3b2c9c.mp3str"
+path="res://.godot/imported/cannon_fire.mp3-38040bdcd435292db7dc6aa969beec74.mp3str"
 
 [deps]
 
-source_file="res://audio/cannon_fire.mp3"
-dest_files=["res://.godot/imported/cannon_fire.mp3-6f8e1c228205fccf45fafcf59f3b2c9c.mp3str"]
+source_file="res://Audio/cannon_fire.mp3"
+dest_files=["res://.godot/imported/cannon_fire.mp3-38040bdcd435292db7dc6aa969beec74.mp3str"]
 
 [params]
 

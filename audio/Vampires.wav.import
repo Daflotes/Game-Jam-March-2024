@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dyflmk7p8fluy"
-path="res://.godot/imported/Vampires.wav-94ca692dc73e6b941fc4f453d2cee0f6.sample"
+path="res://.godot/imported/Vampires.wav-031f1f96d97dd79dcb7aac5310f98a73.sample"
 
 [deps]
 
-source_file="res://audio/Vampires.wav"
-dest_files=["res://.godot/imported/Vampires.wav-94ca692dc73e6b941fc4f453d2cee0f6.sample"]
+source_file="res://Audio/Vampires.wav"
+dest_files=["res://.godot/imported/Vampires.wav-031f1f96d97dd79dcb7aac5310f98a73.sample"]
 
 [params]
 

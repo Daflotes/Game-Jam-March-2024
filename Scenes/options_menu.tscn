@@ -1,34 +1,47 @@
-[gd_scene load_steps=2 format=3 uid="uid://dpd2cw2erwgam"]
+[gd_scene load_steps=3 format=3 uid="uid://dpd2cw2erwgam"]
 
-[ext_resource type="Script" path="res://Scripts/options_menu.gd" id="1_tlf7q"]
+[ext_resource type="Script" path="res://Scenes/options_menu.gd" id="1_ylfrl"]
 
-[node name="MainMenu" type="Control"]
+[sub_resource type="SystemFont" id="SystemFont_sno1a"]
+font_names = PackedStringArray("Impact")
+
+[node name="Options_Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ylfrl")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = -48
 
-[node name="Volume" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Options Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Volume"
-script = ExtResource("1_tlf7q")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = SubResource("SystemFont_sno1a")
+theme_override_font_sizes/font_size = 32
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Placeholder Option" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Exit_Button" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
-text = "Placeholder"
-
-[node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Back"
-
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="MarginContainer/VBoxContainer/Volume" method="_on_back_pressed"]
+size_flags_vertical = 10
+text = "Exit"

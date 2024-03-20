@@ -1,12 +1,36 @@
+class_name MainMenu
 extends Control
+	
+@onready var play_button = $"MarginContainer/HBoxContainer/VBoxContainer/Play Button" as Button
+@onready var options_button = $"MarginContainer/HBoxContainer/VBoxContainer/Options Button" as Button
+@onready var exit_button = $"MarginContainer/HBoxContainer/VBoxContainer/Exit Button" as Button
+@onready var options_menu = $OptionsMenu as OptionsMenu
+@onready var margin_container = $MarginContainer
 
-func _on_play_pressed():
-	get_tree().change_scene_to_file("res://level.tscn")
+@onready var start_level = preload("res://Scenes/level.tscn") as PackedScene
 
 
-func _on_options_pressed():
-	pass # Replace with function body.
+func _ready():
+	handle_connecting_signals()
+	
+func on_start_pressed() -> void:
+	get_tree().change_scene_to_packed(start_level)
+	
+func on_options_pressed() -> void:
+	margin_container.visible = false
+	options_menu.set_process(true)
+	options_menu.visible = true
+	#print("fuck")
 
-
-func _on_exit_pressed():
+func on_exit_pressed() -> void:
 	get_tree().quit()
+	
+func on_exit_options_menu() -> void:
+	margin_container.visible = true
+	options_menu.visible = false
+	
+func handle_connecting_signals() -> void:
+	play_button.button_down.connect(on_start_pressed)
+	options_button.button_down.connect(on_options_pressed)
+	exit_button.button_down.connect(on_exit_pressed)
+	options_menu.exit_options_menu.connect(on_exit_options_menu)
