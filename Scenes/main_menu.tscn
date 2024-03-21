@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Scripts/Main Menu.gd" id="1_6q4cq"]
 [ext_resource type="Texture2D" uid="uid://dbluxe8dcnw1s" path="res://Art Assets/ground mesh_aerial_grass_rock_diff_2k-2.jpg" id="2_2fu70"]
-[ext_resource type="PackedScene" uid="uid://rdkcany02kdh" path="res://Scenes/options_menu.tscn" id="3_22tsy"]
-[ext_resource type="AudioStream" uid="uid://dyflmk7p8fluy" path="res://Audio/Vampires.wav" id="4_gpgdb"]
+[ext_resource type="PackedScene" uid="uid://dpd2cw2erwgam" path="res://Scenes/options_menu.tscn" id="3_22tsy"]
+[ext_resource type="AudioStream" uid="uid://dyflmk7p8fluy" path="res://audio/Vampires.wav" id="4_gpgdb"]
 
 [sub_resource type="SystemFont" id="SystemFont_320st"]
 font_names = PackedStringArray("Impact")

@@ -9,6 +9,7 @@ extends Control
 @onready var start_level = preload("res://Scenes/level.tscn") as PackedScene
 
 func _ready():
+	print("g")
 	handle_connecting_signals()
 	
 func on_start_pressed() -> void:

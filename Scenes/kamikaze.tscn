@@ -2,10 +2,9 @@
 
 [ext_resource type="Script" path="res://Scripts/kamikaze.gd" id="1_3uo21"]
 [ext_resource type="AudioStream" uid="uid://va0i3yg6yjvm" path="res://audio/explosion.mp3" id="2_1fcfl"]
+[ext_resource type="PackedScene" uid="uid://jc07xvt887n3" path="res://Art Assets/Yokosuka MXY-7 plane model.glb" id="3_2q1wl"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fnomt"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_bghsk"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_1i4cq"]
 radius = 3.0
@@ -20,9 +19,6 @@ script = ExtResource("1_3uo21")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_fnomt")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_bghsk")
-
 [node name="BlastArea" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BlastArea"]
@@ -30,5 +26,9 @@ shape = SubResource("SphereShape3D_1i4cq")
 
 [node name="ExplosionAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_1fcfl")
+bus = &"Sfx"
+
+[node name="Yokosuka MXY-7 plane model" parent="." instance=ExtResource("3_2q1wl")]
+transform = Transform3D(-1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, 0, 0, 0)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

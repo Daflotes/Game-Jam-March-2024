@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://cbpxvaall2xca"]
 
 [ext_resource type="Script" path="res://Scripts/unit.gd" id="1_ecb5w"]
-[ext_resource type="AudioStream" uid="uid://cjuh5l7lc3y85" path="res://Audio/thud.mp3" id="2_5h2bm"]
-[ext_resource type="AudioStream" uid="uid://va0i3yg6yjvm" path="res://Audio/explosion.mp3" id="3_mkjxt"]
+[ext_resource type="AudioStream" uid="uid://cjuh5l7lc3y85" path="res://audio/thud.mp3" id="2_5h2bm"]
+[ext_resource type="AudioStream" uid="uid://va0i3yg6yjvm" path="res://audio/explosion.mp3" id="3_mkjxt"]
 [ext_resource type="PackedScene" uid="uid://dxolphl5ld6rn" path="res://Art Assets/suicide bomber.glb" id="4_dylm5"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0l57v"]
@@ -27,9 +27,11 @@ shape = SubResource("CapsuleShape3D_amyhp")
 
 [node name="ThudAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_5h2bm")
+bus = &"Sfx"
 
 [node name="ExplosionAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_mkjxt")
+bus = &"Sfx"
 
 [node name="BlastArea" type="Area3D" parent="."]
 

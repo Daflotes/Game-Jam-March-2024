@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwcerhiurfvo1"]
+[gd_scene load_steps=7 format=3 uid="uid://cwcerhiurfvo1"]
 
 [ext_resource type="Script" path="res://Scripts/Viking.gd" id="1_f0mwi"]
 
@@ -9,11 +9,19 @@ friction = 0.0
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_b2rkj"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_xtnvh"]
+radius = 0.2
+
+[sub_resource type="SphereMesh" id="SphereMesh_rdy41"]
+radius = 0.2
+height = 0.4
+
 [node name="Viking" type="RigidBody3D"]
 axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
+mass = 100.0
 physics_material_override = SubResource("PhysicsMaterial_p0fub")
 script = ExtResource("1_f0mwi")
 
@@ -25,3 +33,22 @@ mesh = SubResource("CapsuleMesh_b2rkj")
 
 [node name="FloorChecker" type="RayCast3D" parent="."]
 target_position = Vector3(0, -1.1, 0)
+
+[node name="HingeJoint3D" type="HingeJoint3D" parent="."]
+node_a = NodePath("..")
+node_b = NodePath("../Axe")
+params/bias = 0.0
+angular_limit/enable = true
+angular_limit/upper = 0.785398
+angular_limit/lower = -0.785398
+
+[node name="Axe" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
+gravity_scale = 0.0
+
+[node name="AxeCollision" type="CollisionShape3D" parent="Axe"]
+shape = SubResource("SphereShape3D_xtnvh")
+
+[node name="AxeMesh" type="MeshInstance3D" parent="Axe"]
+mesh = SubResource("SphereMesh_rdy41")
+skeleton = NodePath("../..")
