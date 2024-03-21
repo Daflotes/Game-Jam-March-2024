@@ -15,7 +15,6 @@ func on_start_pressed() -> void:
 	get_tree().change_scene_to_packed(start_level)
 	
 func on_options_pressed() -> void:
-	print ("test")
 	margin_container.visible = false
 	options_menu.set_process(true)
 	options_menu.visible = true
