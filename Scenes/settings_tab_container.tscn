@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dui5iowuqlotx"]
+[gd_scene load_steps=4 format=3 uid="uid://dui5iowuqlotx"]
 
 [ext_resource type="PackedScene" uid="uid://b27woeaw5ga1p" path="res://Scenes/window_mode_button.tscn" id="1_o3gy1"]
+[ext_resource type="PackedScene" uid="uid://cs22obqhlmwrg" path="res://Scenes/audio_slider_settings.tscn" id="1_q2rcl"]
 [ext_resource type="PackedScene" uid="uid://da5hx4gh6mand" path="res://Scenes/resolution_mode_button.tscn" id="2_770hj"]
 
 [node name="Settings_Tab_Container" type="Control"]
@@ -45,24 +46,48 @@ theme_override_constants/separation = 64
 alignment = 1
 
 [node name="Label" type="Label" parent="TabContainer/Sound/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "12345678"
 
 [node name="Label2" type="Label" parent="TabContainer/Sound/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "12345678"
 
 [node name="Label3" type="Label" parent="TabContainer/Sound/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "12345678"
 
 [node name="Label4" type="Label" parent="TabContainer/Sound/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "12345678"
 
 [node name="Label5" type="Label" parent="TabContainer/Sound/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "12345678"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Sound/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Sound/MarginContainer/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="Audio_Slider_Settings" parent="TabContainer/Sound/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_q2rcl")]
+layout_mode = 2
+bus_name = "Master"
+
+[node name="Audio_Slider_Settings2" parent="TabContainer/Sound/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_q2rcl")]
+layout_mode = 2
+bus_name = "Music"
+
+[node name="Audio_Slider_Settings3" parent="TabContainer/Sound/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_q2rcl")]
+layout_mode = 2
+bus_name = "Sfx"
 
 [node name="Graphics" type="TabBar" parent="TabContainer"]
 visible = false
@@ -145,22 +170,27 @@ theme_override_constants/separation = 64
 alignment = 1
 
 [node name="Label" type="Label" parent="TabContainer/Controls/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "12345678"
 
 [node name="Label2" type="Label" parent="TabContainer/Controls/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "12345678"
 
 [node name="Label3" type="Label" parent="TabContainer/Controls/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "12345678"
 
 [node name="Label4" type="Label" parent="TabContainer/Controls/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "12345678"
 
 [node name="Label5" type="Label" parent="TabContainer/Controls/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "12345678"
 
@@ -186,21 +216,26 @@ theme_override_constants/separation = 64
 alignment = 1
 
 [node name="Label" type="Label" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "12345678"
 
 [node name="Label2" type="Label" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "12345678"
 
 [node name="Label3" type="Label" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "12345678"
 
 [node name="Label4" type="Label" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "12345678"
 
 [node name="Label5" type="Label" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "12345678"
